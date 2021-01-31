@@ -129,7 +129,7 @@ print(f'Separation duration: {end_time - start_time:.2f} sec.')
 
 print('Saving track..')
 out_name = Path(args.out_name).expanduser()
-out_name.mkdir(parents=True, exist_ok=True)
+out_name.parent.mkdir(parents=True, exist_ok=True)
 
 wavfile.write(str(out_name) + '_vox.wav', sr, s[0].astype(np.float32))
 wavfile.write(str(out_name) + '_acc.wav', sr, s[1].astype(np.float32))
