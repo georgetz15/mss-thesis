@@ -1,0 +1,11 @@
+{
+  "growth_rate": 8,
+  "block_config": [4, 4, 4],
+  "compression": 0.5,
+  "num_init_features": 16,
+  "bn_size": 2,
+  "drop_rate": 0.1,
+  "efficient": true,
+  "final_growth_rate": 4,
+  "num_final_layers": 2
+}
