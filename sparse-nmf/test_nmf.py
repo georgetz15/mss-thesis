@@ -30,7 +30,8 @@ def istft(X, sr, n_fft, n_hop):
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description='Per-track NMF trainer')
+    parser = argparse.ArgumentParser(description='Use this script to evaluate a sparse nmf model on vox/acc separation'
+                                                 ' using the MUSDB18 test dataset.')
 
     parser.add_argument('--out-dir', type=str, help='Directory where the individual models will be saved.')
     parser.add_argument('--musdb-root', type=str, help='root path of dataset', required=True)
