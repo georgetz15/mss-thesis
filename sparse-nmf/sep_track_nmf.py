@@ -30,19 +30,20 @@ def istft(X, sr, n_fft, n_hop):
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description='Per-track NMF trainer')
+    parser = argparse.ArgumentParser(description='Tool to separate a mixture audio file into vocals and accompaniment '
+                                                 'using the Sparse NMF model.')
 
-    parser.add_argument('--out-name', type=str, help='Path for output tracks with name.')
+    parser.add_argument('--track', type=str, help='Path to audio file.',
+                        required=True)
+    parser.add_argument('--acc', type=str, help='Path to accompaniment model',
+                        required=True)
+    parser.add_argument('--vox', type=str, help='Path to vocals model',
+                        required=True)
+
+    parser.add_argument('--out-name', type=str, help='Path for output tracks with name.',
+                        default='out')
     parser.add_argument('--sr', type=float, default=44100,
                         help='Sampling rate of the tracks.')
-
-    parser.add_argument('--track', type=str, help='Path to wavfile.', required=True)
-    parser.add_argument('--acc', type=str, help='Path to accompaniment model', required=True)
-    parser.add_argument('--vox', type=str, help='Path to vocals model', required=True)
-
-    parser.add_argument('--device', type=str, default='cuda', choices=['cpu', 'cuda'],
-                        help='Choose device for training')
-
     parser.add_argument('--n-fft', type=int, default=2048)
     parser.add_argument('--n-hop', type=int, default=512)
     parser.add_argument('--tol', type=float, default=1e-5, help='Cost change tolerance for stopping criterion.')
@@ -52,6 +53,8 @@ if __name__ == '__main__':
     parser.add_argument('--b-div', type=float, default=1, help='Beta divergence to be used.')
     parser.add_argument('--specgram-pow', type=float, default=1,
                         help='Power of abs(stft(x))')
+    parser.add_argument('--device', type=str, default='cuda', choices=['cpu', 'cuda'],
+                        help='Choose device for training')
 
     args, _ = parser.parse_known_args()
 

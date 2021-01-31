@@ -42,9 +42,10 @@ parser.add_argument('--model-vox', type=str, help='Path to the torch .pth model 
                     required=True)
 parser.add_argument('--params-json', type=str, help='Path to the .json file containing the model parameters.',
                     required=True)
+
 parser.add_argument('--out-name', type=str, help='Specify the output path for the track. Use a name without the '
                                                  'extension eg. "mydir/mytrack" .',
-                    required=True, default='track')
+                    default='out')
 parser.add_argument('--n-fft', type=int, help='FFT length for the stft.',
                     required=False,
                     default=4096)
