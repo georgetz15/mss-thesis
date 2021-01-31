@@ -15,10 +15,10 @@ Open-Unmix.
 
 In `mdensenet/` there is the MDensenet model's source, a script to separate a track using a trained model and 
 an exemplar json file with mdensenet's parameters. The directory contains the
- [efficient_densenet_pytorch]() repo as a submodule, because it is used as a dependency.
+ [efficient_densenet_pytorch](https://github.com/gpleiss/efficient_densenet_pytorch) repo as a submodule, because it is used as a dependency.
  
 In `sparse-nmf/` there is the Sparse-NMF implementation along with scripts for training a source dictionary with
-[MUSDB18]()'s [3] tracks and using trained dictionaries for the separation of mixtures. 
+[MUSDB18](https://sigsep.github.io/datasets/musdb.html)'s [3] tracks and using trained dictionaries for the separation of mixtures. 
 
 ## Setup instructions
 In order to setup the necessary dependencies it is recommended to update the densenet repo submodule
@@ -29,11 +29,11 @@ For these, you can run the following commands from your CLI:
 
 To activate the dedicated environment, use `conda activate mss-thesis-pytorch-gpu`.
 
-(The conda env setup is based on the Open-Unmix repo, that shows this handy way of installing the necessary
+(The conda env setup is based on the [Open-Unmix](https://github.com/sigsep/open-unmix-pytorch) repo, that shows this handy way of installing the necessary
 dependencies :pray:)
 
 ## Notes on the experiments
-The [MUSDB18]() dataset [3] was used along with source from the [Open-Unmix]() repo [5] for the experiments,
+The [MUSDB18](https://sigsep.github.io/datasets/musdb.html) dataset [3] was used along with source from the [Open-Unmix](https://github.com/sigsep/open-unmix-pytorch) repo [5] for the experiments,
 in order to train the models and evaluate them on the separation quality as well as on train and 
 separation times.
 
